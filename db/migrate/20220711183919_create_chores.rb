@@ -5,8 +5,8 @@ class CreateChores < ActiveRecord::Migration[6.1]
       t.string :status
       t.string :occurence
       t.boolean :is_assigned
-      
-      t.references :houses, foreign_key: true, index: true
+
+      t.references :house, foreign_key: true, index: true
 
 
       t.timestamps

@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :image
       t.string :bio
 
-      t.references :houses, foreign_key: true, index: true
+      t.references :house, foreign_key: true, index: true
 
       t.timestamps
     end
