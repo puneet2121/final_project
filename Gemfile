@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'net-smtp'
 gem 'react-rails' 
-gem 'fast_jsonapi'
+gem 'jsonapi-serializer'
 
 
 # Use Active Storage variant
