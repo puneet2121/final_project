@@ -1,13 +1,13 @@
 import React from "react";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from '../components/Home'
 
-function App() {
+ const App = () => {
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-      </Routes>
+      <Switch>
+        <Route exact path="/" component={Home}></Route>
+      </Switch>
     </div>
   )
 }
