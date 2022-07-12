@@ -2,7 +2,7 @@ import React from 'react'
 
 function House() {
   return (
-    <div>This is the house/:id page</div>
+    <div>This is the house/1 page</div>
   )
 }
 
