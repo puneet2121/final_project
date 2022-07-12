@@ -18,6 +18,7 @@ function House() {
 }))
   })
   axios.get('http://localhost:3000/api/v1/users')
+  
   .then((result) => {
     setState(prev => ({
       ...prev,
