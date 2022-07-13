@@ -1,6 +1,6 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
-export default function Roomate(props) {
+export default function Roommate(props) {
   console.log('props', props)
   return (
     <><Card border="primary" style={{ width: '28rem' }}>
@@ -21,6 +21,7 @@ export default function Roomate(props) {
             {props?.roommate[2]?.bio}
           </Card.Text>
         </Card.Body>
-      </Card></>
+      </Card>
+      </>
   )
 }
