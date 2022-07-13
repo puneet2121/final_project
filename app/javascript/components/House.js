@@ -9,8 +9,11 @@ import Task from './House/Tasks';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useCookies } from "react-cookie";
+
 
 function House() {
+  const [cookies, setCookie] = useCookies(["user"]);
   const [state, setState] = useState({
     attributes: {},
     roommates: []
@@ -35,6 +38,7 @@ function House() {
   }, [])
 
 
+
   console.log('state', state.attributes)
   console.log('state roomates', state.roommates)
   const roommate = state.roommates
@@ -42,6 +46,11 @@ function House() {
     .map(item => {
       return (item?.attributes)
     })
+  function handleCookie() {
+    setCookie("user", roommate[0]?.name, {
+      path: "/"
+    });
+  }
   return (
     <Fragment>
       <Container style={{ marginTop: '95px' }}>
@@ -53,15 +62,15 @@ function House() {
       <Container style={{ marginTop: '100px' }}>
         <Row>
           <Col>
-          <Link to='/house/1/chores'> 
-          <Generatetask/>
-          </Link>
+            <Link to='/house/1/chores'>
+              <Generatetask />
+            </Link>
           </Col>
           <Col><Task /></Col>
         </Row>
       </Container>
 
-
+      <button onClick={handleCookie}>Set Cookie</button>
     </Fragment>
   )
 }
