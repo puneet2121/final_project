@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import User from './House/User'
 import Roommate from './House/Roommate'
 import Generatetask from './House/Generatetask';
@@ -51,7 +52,11 @@ function House() {
       </Container>
       <Container style={{ marginTop: '100px' }}>
         <Row>
-          <Col><Generatetask /></Col>
+          <Col>
+          <Link to='/house/1/chores'> 
+          <Generatetask/>
+          </Link>
+          </Col>
           <Col><Task /></Col>
         </Row>
       </Container>
