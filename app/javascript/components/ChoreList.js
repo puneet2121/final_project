@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ChoreListItem from './ChoreListItem';
 
 function ChoreList() {
+  const [chores, setChores] = useState('');
+
   return (
     <div>
       <table class="table">
@@ -12,12 +15,14 @@ function ChoreList() {
       <th scope="col">Who's doing it</th>
       <th scope="col">Occurence</th>
       <th scope="col">Status</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    {/* <ChoreListItem></ChoreListItem> */}
     <tr>
       <th scope="row">1</th>
-      <input type="chore" placeholder="Task"/>
+      <input type="text" name='chore' placeholder="Task"/>
       <td>
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Dropdown button
@@ -40,6 +45,11 @@ function ChoreList() {
       </td>
       <td>
         <span class = "label label-success">Success Label</span>
+      </td>
+      <td>
+        <button>Submit</button>
+        <button>Edit</button>
+        <button>Delete</button>
       </td>
     </tr>
   </tbody>
