@@ -5,8 +5,8 @@ import Form from 'react-bootstrap/Form';
 import { Redirect,Link } from 'react-router-dom'
 import { useCookies } from "react-cookie";
 import { useState, useEffect, Fragment } from 'react';
-function Home() {
-  const [cookies, setCookie] = useCookies(["user"]);
+function Home(props) {
+  // const [cookies, setCookie] = useCookies(["user"]);
   const [state, setState] = useState({
     attributes: {},
     roommates: []
@@ -35,13 +35,12 @@ function Home() {
       return (item?.attributes)
     })
 
-  if (cookies.user) {
+  if (props.cookies.user) {
     return <Redirect to="/house/1" />
   }
   function handleCookie() {
-    setCookie("user", roommate[0]?.name, {
-      path: "/"
-    });
+    props.setCookie("user", roommate[0]?.name);
+    
   }
   return (
     <Form>

@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import User from './House/User'
 import Roommate from './House/Roommate'
 import Generatetask from './House/Generatetask';
@@ -12,13 +12,14 @@ import Col from 'react-bootstrap/Col';
 import { useCookies } from "react-cookie";
 
 
-function House() {
-  const [cookies, setCookie] = useCookies(["user"]);
+
+function House(props) {
+  // const [cookies, setCookie,removeCookie] = useCookies(["user"]);
   const [state, setState] = useState({
     attributes: {},
     roommates: []
   })
-
+  const history = useHistory()
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/v1/houses')
@@ -46,11 +47,13 @@ function House() {
     .map(item => {
       return (item?.attributes)
     })
-  function handleCookie() {
-    setCookie("user", roommate[0]?.name, {
-      path: "/"
-    });
+
+
+  function click() {
+    props.removeCookie("user");
+    history.push('/')
   }
+
   return (
     <Fragment>
       <Container style={{ marginTop: '95px' }}>
@@ -70,7 +73,7 @@ function House() {
         </Row>
       </Container>
 
-      <button onClick={handleCookie}>Set Cookie</button>
+      <button onClick={click}>Logout</button>
     </Fragment>
   )
 }
