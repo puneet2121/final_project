@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     namespace :v1 do
        resources :houses, param: :id
        resources :users, param: :id
+       resources :chore, param: :id
     end
   end
 

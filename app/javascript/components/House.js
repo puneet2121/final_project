@@ -36,12 +36,10 @@ function House(props) {
           roommates: result.data.data
         }))
       })
+      
   }, [])
 
-
-
-  console.log('state', state.attributes)
-  console.log('state roomates', state.roommates)
+  
   const roommate = state.roommates
     .filter(item => { return (Number(item.relationships.house.data.id) === 1) })
     .map(item => {

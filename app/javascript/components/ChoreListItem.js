@@ -1,24 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 function ChoreListItem(props) {
-
+  const [taskee, setTaskee] = useState(props.chore.user_id || null);
+  
 
 
 
   return (
-    <tbody>
+
     <tr>
-      <th scope="row">1</th>
-      <input type="text" name='chore' placeholder="Task"/>
-      <td>
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Dropdown button
-      </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
+      <td> 
+      {props.chore.id}
+      </td>
+      <td> 
+      <p> {props.chore.chore_name}</p>
+      </td>
+      <td>  
+  <select 
+  value={taskee}
+  onChange={(event) => setTaskee(event.target.value)}
+  >
+    {
+      props.roommates.map((roommate) => {
+        return <option value={roommate.id}>{roommate.name}</option>
+      })
+    }
+  </select>
       </td>
       <td>
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,12 +42,13 @@ function ChoreListItem(props) {
         <span class = "label label-success">Success Label</span>
       </td>
       <td>
+        {/* <button onClick={postChore}>Submit</button> */}
         <button>Submit</button>
         <button>Edit</button>
         <button>Delete</button>
       </td>
     </tr>
-  </tbody>
+
   )
 }
 

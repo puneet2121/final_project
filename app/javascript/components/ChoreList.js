@@ -1,10 +1,56 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ChoreListItem from './ChoreListItem';
 
-function ChoreList() {
-  const [chores, setChores] = useState('');
+function ChoreList(props) {
+  const [chores, setChores] = useState([]);
+  const [roommates, setRoommates] = useState([]);
+  const [addTask, setAddTask] = useState({
+    chore_name: ''
+  });
 
+  useEffect(() => {
+    
+    axios.get('http://localhost:3000/api/v1/houses/1')
+    .then((res) => {
+      setChores(res.data.chores)
+      setRoommates(res.data.roommates)
+    })
+  }, [])
+
+  const submitTask = event => {
+    event.preventDefault()
+    const newTask = {
+      chore_name: addTask.chore_name
+    }
+
+    const newChores = [...chores, newTask]
+    setChores(newChores)
+    setAddTask('')
+  }
+
+  const handleForm = (event) => {
+    event.preventDefault();
+    let taskName = event.target.value
+
+    const newData = {...addTask};
+    newData['chore_name'] = taskName;
+
+    setAddTask(newData)
+  }
+    
+  const choreList = chores.map((chore) => {
+    return (
+      <ChoreListItem
+      chore={chore}
+      roommates={roommates}
+      >
+
+      </ChoreListItem>
+    )
+  })
+  
   return (
     <div>
       <table class="table">
@@ -18,43 +64,17 @@ function ChoreList() {
       <th scope="col">Action</th>
     </tr>
   </thead>
-  <tbody>
-    {/* <ChoreListItem></ChoreListItem> */}
-    <tr>
-      <th scope="row">1</th>
-      <input type="text" name='chore' placeholder="Task"/>
-      <td>
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         Dropdown button
-      </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-      </td>
-      <td>
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" >Action</a>
-    <a class="dropdown-item" >Another action</a>
-    <a class="dropdown-item" >Something else here</a>
-  </div>
-      </td>
-      <td>
-        <span class = "label label-success">Success Label</span>
-      </td>
-      <td>
-        <button>Submit</button>
-        <button>Edit</button>
-        <button>Delete</button>
-      </td>
-    </tr>
-  </tbody>
+    <tbody> 
+      {choreList}
+    </tbody>
       </table>
-  </div>
+      <h2>Add a chore</h2>
+      <form onSubmit={submitTask}>
+        <input type='text' onChange={handleForm} name="chore_name" required="required" placeholder="Add task"></input>
+        <button type="submit" onSubmit={submitTask}>Add</button>
+      </form>
+
+    </div>  
   )
 }
 
