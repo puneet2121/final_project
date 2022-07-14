@@ -1,6 +1,6 @@
-class HouseSerializer
+class ChoreSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :address, :number_of_tenants, :image
+  attributes :chore_name, :status, :occurence, :is_assigned, :house_id
 
-  has_many :users
+  belongs_to :house
 end
