@@ -45,6 +45,7 @@ function House(props) {
   const roommate = state.roommates
     .filter(item => { return (Number(item.relationships.house.data.id) === 1) })
     .map(item => {
+      console.log(item,'ITEM484848')
       return (item?.attributes)
     })
 
