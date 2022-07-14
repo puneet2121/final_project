@@ -14,7 +14,7 @@ import { useCookies } from "react-cookie";
           <Home setCookie={setCookie} cookies={cookies}/>
         </Route>
         <Route exact path="/house/1">
-        <House removeCookie={removeCookie}/>
+        <House removeCookie={removeCookie} setCookie={setCookie} cookies={cookies}/>
         </Route>
         <Route exact path="/house/1/chores" component={ChoreList}></Route>
       </Switch>

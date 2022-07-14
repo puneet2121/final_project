@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import Form from 'react-bootstrap/Form';
-import { Redirect } from 'react-router-dom'
+import { Redirect, useHistory } from 'react-router-dom'
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from 'react';
 function Home(props) {
@@ -14,7 +14,6 @@ function Home(props) {
     user: {},
     house: []
   })
-
 
   useEffect(() => {
     axios.get('http://localhost:3000/api/v1/houses')
@@ -39,7 +38,6 @@ function Home(props) {
           house: result.data.house
         }))
       })
-
   }, [])
   // const authUser = state.house
   //   .map(item => {

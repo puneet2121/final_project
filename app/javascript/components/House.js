@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory,Redirect } from 'react-router-dom';
 import User from './House/User'
 import Roommate from './House/Roommate'
 import Generatetask from './House/Generatetask';
@@ -50,6 +50,9 @@ function House(props) {
 
   function click() {
     props.removeCookie("user");
+    history.push('/')
+  }
+  if (props.cookies.user !== 'Ali Bouran') {
     history.push('/')
   }
 
