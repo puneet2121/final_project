@@ -6,15 +6,40 @@ import ChoreListItem from './ChoreListItem';
 function ChoreList(props) {
   const [chores, setChores] = useState([]);
   const [roommates, setRoommates] = useState([]);
+  const [addTask, setAddTask] = useState({
+    chore_name: ''
+  });
+
   useEffect(() => {
-    axios.get('http://localhost:3000/api/v1/houses/2')
+    
+    axios.get('http://localhost:3000/api/v1/houses/1')
     .then((res) => {
-      console.log(res.data)
       setChores(res.data.chores)
       setRoommates(res.data.roommates)
     })
   }, [])
 
+  const submitTask = event => {
+    event.preventDefault()
+    const newTask = {
+      chore_name: addTask.chore_name
+    }
+
+    const newChores = [...chores, newTask]
+    setChores(newChores)
+    setAddTask('')
+  }
+
+  const handleForm = (event) => {
+    event.preventDefault();
+    let taskName = event.target.value
+
+    const newData = {...addTask};
+    newData['chore_name'] = taskName;
+
+    setAddTask(newData)
+  }
+    
   const choreList = chores.map((chore) => {
     return (
       <ChoreListItem
@@ -43,6 +68,12 @@ function ChoreList(props) {
       {choreList}
     </tbody>
       </table>
+      <h2>Add a chore</h2>
+      <form onSubmit={submitTask}>
+        <input type='text' onChange={handleForm} name="chore_name" required="required" placeholder="Add task"></input>
+        <button type="submit" onSubmit={submitTask}>Add</button>
+      </form>
+
     </div>  
   )
 }

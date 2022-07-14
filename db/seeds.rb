@@ -52,24 +52,27 @@
 # ])
 
 houses = House.all
-
+users = User.all
 chores = Chore.create([
   {
     chore_name: 'Doing the dishes',
     status: 'Not assigned',
     occurence: 'daily',
-    house: houses[1]
+    house: houses.first,
+    user: users.first
   },
   {
     chore_name: 'Vaccuming',
     status: 'Assigned',
     occurence: 'weekly',
-    house: houses[1]
+    house: houses.first,
+    user: users[1]
   },
   {
     chore_name: 'Getting groceries',
     status: 'Not assigned',
     occurence: 'weekly',
-    house: houses[1]
+    house: houses.first,
+    user: users[2]
   }
 ])

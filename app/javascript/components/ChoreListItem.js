@@ -8,16 +8,15 @@ function ChoreListItem(props) {
 
 
   return (
-    <tbody>
+
     <tr>
-      <th scope="row">{props.chore.id}</th>
-      {/* <input type="text" onChange={(event) => setChore(event.target.value)} name='chore' placeholder="Task"/> */}
-      <td>
-       <p> {props.chore.chore_name}</p>
+      <td> 
+      {props.chore.id}
       </td>
-      <td>
-      
-  
+      <td> 
+      <p> {props.chore.chore_name}</p>
+      </td>
+      <td>  
   <select 
   value={taskee}
   onChange={(event) => setTaskee(event.target.value)}
@@ -45,12 +44,11 @@ function ChoreListItem(props) {
       <td>
         {/* <button onClick={postChore}>Submit</button> */}
         <button>Submit</button>
-
         <button>Edit</button>
         <button>Delete</button>
       </td>
     </tr>
-  </tbody>
+
   )
 }
 
