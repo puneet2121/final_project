@@ -59,7 +59,6 @@ function House(props) {
   const routeChange = () => {
     let path = `/house/${props.userData.house_id}/chores`;
     history.push(path);
-    console.log("this is button")
   }
 
   if (props.isLogin === false) {
@@ -77,13 +76,9 @@ function House(props) {
       <Container style={{ marginTop: '100px' }}>
         <Row>
           <Col>
-            <button  
-              onClick={routeChange}
-            >
-              Login
-            </button>
-            <Generatetask />
-
+            <Button variant="primary" size="lg" onClick={routeChange}>
+              Generate Task
+            </Button>
           </Col>
           <Col><Task /></Col>
         </Row>

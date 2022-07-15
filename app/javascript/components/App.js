@@ -38,7 +38,7 @@ const App = () => {
     <div>
       <Switch>
 
-        <Route path="/house/:houseId">
+        <Route exact path="/house/:houseId">
           <House removeCookie={removeCookie} setCookie={setCookie}
             cookies={cookies}
             logout={logout}
@@ -46,7 +46,7 @@ const App = () => {
             userData={userData}
           />
         </Route>
-        <Route path={`/house/${userData.house_id}/chores`}>
+        <Route exact path={`/house/${userData.house_id}/chores`}>
         <ChoreList />
         </Route>
         <Route exact path="/">
