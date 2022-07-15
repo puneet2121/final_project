@@ -6,6 +6,7 @@ import ChoreList from "./ChoreList";
 import { useCookies } from "react-cookie";
 import axios from 'axios';
 import TextLinkExample from "./Nav";
+import Task from "./House/Tasks";
 
 const App = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
@@ -42,6 +43,7 @@ const App = () => {
           setUserdata(result.data.user)
           console.log(result.data, "con")
           setIslogin(true)
+          
         } else {
           //handle bad login
           setIslogin(false)
@@ -80,6 +82,10 @@ const App = () => {
               setUsername={setUsername}
               removeCookie={removeCookie} />)
         )} />
+        <Route exact path={`chores/viewtasks`}>
+          <Task />
+
+        </Route>
       </Switch>
     </div>
   )
