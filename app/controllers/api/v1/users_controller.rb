@@ -11,6 +11,13 @@ module Api
         render json: {user:user, house: user.house.users}
         
       end
+      def login
+        puts 'login routes'
+        user = User.find_by(name: params[:name])
+        puts 'login User found'
+        puts user
+        render json: {user:user}
+      end
     end
   end
 end

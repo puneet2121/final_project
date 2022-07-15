@@ -2,12 +2,14 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import Form from 'react-bootstrap/Form';
-import { Redirect, useHistory } from 'react-router-dom'
+import { Redirect, useParams, Route, Switch,Link  } from 'react-router-dom'
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from 'react';
 function Home(props) {
   // const [cookies, setCookie] = useCookies(["user"]);
-  const [username, setUsername] = useState('')
+  const something = useParams()
+  console.log(something, 'ffff')
+  
   const [state, setState] = useState({
     attributes: {},
     roommates: [],
@@ -43,21 +45,23 @@ function Home(props) {
   //   .map(item => {
   //     return (item?.attributes)
   //   })
-  function handleCookie() {
-    props.setCookie("user", username);
+  // function handleCookie() {
+  //   props.setCookie("user", username);
 
-  }
-  if (props.cookies.user === 'Ali Bouran') {
-    return <Redirect to="/house/1" />
-  }
+  // }
+  
+ 
+  // if (props.cookies.user === 'Ali Bouran') {
+  //   return <Redirect to="/house/1" />
+  // }
 
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Login</Form.Label>
-        <Form.Control type="name" value={username} onChange={(event) => setUsername(event.target.value)} />
+        <Form.Control type="name" value={props.username} onChange={(event) => props.setUsername(event.target.value)} />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleCookie}>
+      <Button variant="primary" type="button" onClick={props.login}>
         Submit
       </Button>
     </Form>

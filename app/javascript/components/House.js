@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react';
-import { Link, useHistory,Redirect } from 'react-router-dom';
+import { Link, useHistory, Redirect, useParams,Link } from 'react-router-dom';
 import User from './House/User'
 import Roommate from './House/Roommate'
 import Generatetask from './House/Generatetask';
@@ -14,10 +14,14 @@ import { useCookies } from "react-cookie";
 
 
 function House(props) {
+  const params = useParams()
   // const [cookies, setCookie,removeCookie] = useCookies(["user"]);
+  console.log(props.cookies,'this is a cookie')
   const [state, setState] = useState({
     attributes: {},
-    roommates: []
+    roommates: [],
+    user: {},
+    house: []
   })
   const history = useHistory()
 
@@ -36,23 +40,27 @@ function House(props) {
           roommates: result.data.data
         }))
       })
-      
+    axios.get(`http://localhost:3000/api/v1/users/${props.cookies.user.id}`)
+      .then((result) => {
+        setState(prev => ({
+          ...prev,
+          user: result.data.user,
+          house: result.data.house
+        }))
+      })
   }, [])
 
-  
-  const roommate = state.roommates
-    .filter(item => { return (Number(item.relationships.house.data.id) === 1) })
-    .map(item => {
-      console.log(item,'ITEM484848')
-      return (item?.attributes)
+  const roommate = state.house
+    .filter(item => { 
+      if(item.id !==props.cookies.user.id) {
+        return item
+      }
     })
+  console.log({roommate})
+  console.log(state.user, 'users consonmi')
+  console.log(state.house)
 
-
-  function click() {
-    props.removeCookie("user");
-    history.push('/')
-  }
-  if (props.cookies.user !== 'Ali Bouran') {
+  if (props.isLogin === false) {
     history.push('/')
   }
 
@@ -60,7 +68,7 @@ function House(props) {
     <Fragment>
       <Container style={{ marginTop: '95px' }}>
         <Row>
-          <Col><User roommate={roommate} address={state.attributes} /></Col>
+          <Col><User roommate={state.user} address={state.attributes} /></Col>
           <Col><Roommate roommate={roommate} /></Col>
         </Row>
       </Container>
@@ -75,7 +83,7 @@ function House(props) {
         </Row>
       </Container>
 
-      <button onClick={click}>Logout</button>
+      <button onClick={props.logout}>Logout</button>
     </Fragment>
   )
 }
