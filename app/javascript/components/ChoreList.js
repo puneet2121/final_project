@@ -22,12 +22,17 @@ function ChoreList(props) {
   const submitTask = event => {
     event.preventDefault()
     const newTask = {
-      chore_name: addTask.chore_name
+      chore_name: addTask.chore_name,
+      house_id: 1
     }
 
     const newChores = [...chores, newTask]
+
+   
+    axios.post('http://localhost:3000/api/v1/chore', newTask).then((res) => console.log(res))
+    
     setChores(newChores)
-    setAddTask('')
+  
   }
 
   const handleForm = (event) => {
