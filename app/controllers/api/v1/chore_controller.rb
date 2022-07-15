@@ -10,8 +10,19 @@ module Api
         render json: chores
       end
 
+      def show
+        chore = Chore.find(params[:id])
+        render json: {
+          chore: chore,
+        }
+      end
+
       def create
         @chore = Chore.create!(chore_params)
+      end
+
+      def destroy
+        chore = Chore.find(params[:id])
       end
 
 
