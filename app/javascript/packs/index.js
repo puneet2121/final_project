@@ -9,9 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
     <CookiesProvider>
     <Router>
+      <React.StrictMode>
       <TextLinkExample /> 
       <Route path='/' component={App}/>
+      </React.StrictMode>
     </Router>
+    
     </CookiesProvider>,
     document.body.appendChild(document.createElement("div")),
 

@@ -5,11 +5,11 @@ function Generatetask() {
   return (
     <>
       <div className="mb-2">
-        
+
         <Button variant="primary" size="lg">
-          Generate Tasks
+          Generate Taskoooo
         </Button>
-    
+
       </div>
     </>
   );

@@ -10,12 +10,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useCookies } from "react-cookie";
+import Button from 'react-bootstrap/Button';
 
 
 
 function House(props) {
   // const [cookies, setCookie,removeCookie] = useCookies(["user"]);
-  console.log(props.cookies,'this is a cookie')
+  console.log(props.cookies, 'this is a cookie')
   const [state, setState] = useState({
     attributes: {},
     roommates: [],
@@ -50,14 +51,15 @@ function House(props) {
   }, [])
 
   const roommate = state.house
-    .filter(item => { 
-      if(item.id !==props.cookies.user.id) {
+    .filter(item => {
+      if (item.id !== props.cookies.user.id) {
         return item
       }
     })
-  console.log({roommate})
-  console.log(state.user, 'users consonmi')
-  console.log(state.house)
+  const routeChange = () => {
+    let path = `/house/${props.userData.house_id}/chores`;
+    history.push(path);
+  }
 
   if (props.isLogin === false) {
     history.push('/')
@@ -74,9 +76,9 @@ function House(props) {
       <Container style={{ marginTop: '100px' }}>
         <Row>
           <Col>
-            <Link to='/house/1/chores'>
-              <Generatetask />
-            </Link>
+            <Button variant="primary" size="lg" onClick={routeChange}>
+              Generate Task
+            </Button>
           </Col>
           <Col><Task /></Col>
         </Row>
