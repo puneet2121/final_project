@@ -10,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <CookiesProvider>
     <Router>
       <React.StrictMode>
-      <TextLinkExample /> 
-      <Route path='/' component={App}/>
+       
+      <App />
       </React.StrictMode>
     </Router>
     

@@ -30,17 +30,17 @@ function ChoreListItem(props) {
   </select>
       </td>
       <td>
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Dropdown button
   </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" >Action</a>
-    <a class="dropdown-item" >Another action</a>
-    <a class="dropdown-item" >Something else here</a>
+  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a className="dropdown-item" >Action</a>
+    <a className="dropdown-item" >Another action</a>
+    <a className="dropdown-item" >Something else here</a>
   </div>
       </td>
       <td>
-        <span class = "label label-success">Success Label</span>
+        <span className = "label label-success">Success Label</span>
       </td>
       <td>
         {/* <button onClick={postChore}>Submit</button> */}

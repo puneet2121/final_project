@@ -61,9 +61,7 @@ function House(props) {
     history.push(path);
   }
 
-  if (props.isLogin === false) {
-    history.push('/')
-  }
+
 
   return (
     <Fragment>

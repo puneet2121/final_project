@@ -61,7 +61,7 @@ function ChoreList(props) {
   
   return (
     <div>
-      <table class="table">
+      <table className="table">
   <thead>
     <tr>
       <th scope="col">#</th>
