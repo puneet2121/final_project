@@ -60,6 +60,10 @@ function House(props) {
     let path = `/house/${props.userData.house_id}/chores`;
     history.push(path);
   }
+  const viewTask = () => {
+    let path = `/house/chores/viewtasks`;
+    history.push(path);
+  }
 
 
 
@@ -78,7 +82,8 @@ function House(props) {
               Generate Task
             </Button>
           </Col>
-          <Col><Task /></Col>
+          <Col>
+          <Task viewTask={viewTask}/></Col>
         </Row>
       </Container>
 

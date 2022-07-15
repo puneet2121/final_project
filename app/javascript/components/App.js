@@ -82,7 +82,7 @@ const App = () => {
               setUsername={setUsername}
               removeCookie={removeCookie} />)
         )} />
-        <Route exact path={`chores/viewtasks`}>
+        <Route exact path={`/house/chores/viewtasks`}>
           <Task />
 
         </Route>
