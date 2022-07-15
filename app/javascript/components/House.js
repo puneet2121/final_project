@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react';
-import { Link, useHistory, Redirect, useParams,Link } from 'react-router-dom';
+import { Link, useHistory, Redirect, useParams } from 'react-router-dom';
 import User from './House/User'
 import Roommate from './House/Roommate'
 import Generatetask from './House/Generatetask';
@@ -14,7 +14,6 @@ import { useCookies } from "react-cookie";
 
 
 function House(props) {
-  const params = useParams()
   // const [cookies, setCookie,removeCookie] = useCookies(["user"]);
   console.log(props.cookies,'this is a cookie')
   const [state, setState] = useState({

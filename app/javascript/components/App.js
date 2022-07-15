@@ -52,7 +52,9 @@ const App = () => {
           logout={logout}
           isLogin={isLogin} />
         </Route>
-        <Route exact path="/house/1/chores" component={ChoreList}></Route>
+        <Route path="/house/1/chores">
+          <ChoreList/>
+        </Route>
       </Switch>
     </div>
   )

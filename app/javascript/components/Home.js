@@ -2,7 +2,7 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import axios from 'axios'
 import Form from 'react-bootstrap/Form';
-import { Redirect, useParams, Route, Switch,Link  } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
 import { useCookies } from "react-cookie";
 import { useState, useEffect } from 'react';
 function Home(props) {
