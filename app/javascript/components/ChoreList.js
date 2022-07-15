@@ -23,14 +23,17 @@ function ChoreList(props) {
     event.preventDefault()
     const newTask = {
       chore_name: addTask.chore_name,
-      house_id: 1
     }
-
+    
+    const house_id = 1
     const newChores = [...chores, newTask]
 
    
-    axios.post('http://localhost:3000/api/v1/chore', newTask).then((res) => console.log(res))
-    
+    axios.post('http://localhost:3000/api/v1/chore', {newTask, house_id})
+    .then((res) => {
+      debugger
+  })
+  
     setChores(newChores)
   
   }
