@@ -11,14 +11,14 @@ module Api
       end
 
       def create
-        @chore = Chore.new(chore_params)
+        @chore = Chore.create!(chore_params)
       end
 
 
       private
 
       def chore_params
-        params.require(:chore).permit(:chore_name)
+        params.require(:chore).permit(:chore_name, :house_id, :user_id)
       end
 
     end
