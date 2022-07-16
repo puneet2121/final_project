@@ -20,22 +20,13 @@ function ChoreListItem(props) {
      const data = props.chore.id
      const object = props.chore
 
-    // const deleteId = props.chore.id;
-
     axios.delete(`http://localhost:3000/api/v1/chore/${data}`, {data: object})
-    .then((result) => console.log('result', result))
-    
-
-    const name = e.target.getAttribute("name")
-    updateList(list.filter(item => item.name !== name));
-
-    const newChores = [...chores]  
-    const index = newChores.indexOf(data)
-    console.log('chores', chores)
-    console.log('index', index)
-    newChores.splice(index, 1)
-    setChores(newChores);
-  
+    .then((result) => {
+      axios.get('http://localhost:3000/api/v1/houses/1')
+      .then((res) => {
+        setChores(res.data.chores)
+      })
+    })
   }
 
 
