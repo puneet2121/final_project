@@ -41,19 +41,7 @@ function Home(props) {
         }))
       })
   }, [])
-  // const authUser = state.house
-  //   .map(item => {
-  //     return (item?.attributes)
-  //   })
-  // function handleCookie() {
-  //   props.setCookie("user", username);
 
-  // }
-  
- 
-  // if (props.cookies.user === 'Ali Bouran') {
-  //   return <Redirect to="/house/1" />
-  // }
 
   return (
     <Form>

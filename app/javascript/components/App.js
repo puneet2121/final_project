@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,Fragment } from "react";
 import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Home from '../components/Home';
 import House from '../components/House';
@@ -43,7 +43,7 @@ const App = () => {
           setUserdata(result.data.user)
           console.log(result.data, "con")
           setIslogin(true)
-          
+
         } else {
           //handle bad login
           setIslogin(false)
@@ -57,7 +57,7 @@ const App = () => {
   }
   console.log("this is the user data", userData)
   return (
-    <div>
+    <div style={{ backgroundImage: `url('https://img.wallpapersafari.com/desktop/1600/900/31/57/UDWB4H.jpg')` }}>
       <TextLinkExample userData={userData}
         isLogin={isLogin} />
       <Switch>
