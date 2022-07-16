@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useCookies } from "react-cookie"; 
+import { useCookies } from "react-cookie";
 import axios from 'axios';
 
 function ChoreListItem(props) {
@@ -7,27 +7,27 @@ function ChoreListItem(props) {
   const [chores, setChores] = useState([])
 
   useEffect(() => {
-    
+
     axios.get('http://localhost:3000/api/v1/houses/1')
-    .then((res) => {
-      setChores(res.data.chores)
-    })
+      .then((res) => {
+        setChores(res.data.chores)
+      })
   }, [])
 
 
-  
-  const deleteTask = function(id) {
-     const data = props.chore.id
-     const object = props.chore
-     console.log('data in delete', data)
+
+  const deleteTask = function (id) {
+    const data = props.chore.id
+    const object = props.chore
+    console.log('data in delete', data)
 
     // const deleteId = props.chore.id;
 
-    axios.delete(`http://localhost:3000/api/v1/chore/${data}`, {data: object})
-    .then((result) => console.log('result', result))
+    axios.delete(`http://localhost:3000/api/v1/chore/${data}`)
+      .then((result) => console.log('result', result))
 
 
-  
+
   }
 
 
@@ -35,36 +35,36 @@ function ChoreListItem(props) {
   return (
 
     <tr>
-      <td> 
-      {props.chore.id}
-      </td>
-      <td> 
-      <p> {props.chore.chore_name}</p>
-      </td>
-      <td>  
-  <select 
-  value={taskee}
-  onChange={(event) => setTaskee(event.target.value)}
-  >
-    {
-      props.roommates.map((roommate) => {
-        return <option value={roommate.id}>{roommate.name}</option>
-      })
-    }
-  </select>
+      <td>
+        {props.chore.id}
       </td>
       <td>
-      <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a className="dropdown-item" >Action</a>
-    <a className="dropdown-item" >Another action</a>
-    <a className="dropdown-item" >Something else here</a>
-  </div>
+        <p> {props.chore.chore_name}</p>
       </td>
       <td>
-        <span className = "label label-success">Success Label</span>
+        <select
+          value={taskee}
+          onChange={(event) => setTaskee(event.target.value)}
+        >
+          {
+            props.roommates.map((roommate) => {
+              return <option value={roommate.id}>{roommate.name}</option>
+            })
+          }
+        </select>
+      </td>
+      <td>
+        <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a className="dropdown-item" >Action</a>
+          <a className="dropdown-item" >Another action</a>
+          <a className="dropdown-item" >Something else here</a>
+        </div>
+      </td>
+      <td>
+        <span className="label label-success">Success Label</span>
       </td>
       <td>
         {/* <button onClick={postChore}>Submit</button> */}
