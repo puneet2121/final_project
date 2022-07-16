@@ -4,7 +4,21 @@ import axios from 'axios';
 
 function ChoreListItem(props) {
   const [taskee, setTaskee] = useState(props.chore.user_id || null);
+  const [chores, setChores] = useState([])
+  console.log('props here: ', props)
+
+  useEffect(() => {
+    
+    axios.get('http://localhost:3000/api/v1/houses/1')
+    .then((res) => {
+      setChores(res.data.chores)
+    })
+  }, [])
   
+  const deleteTask = function(id) {
+    const idToDelete = undefined;
+    axios.delete(`http://localhost:3000/api/v1/chore/${idToDelete}`)
+  }
 
 
 
@@ -46,7 +60,7 @@ function ChoreListItem(props) {
         {/* <button onClick={postChore}>Submit</button> */}
         <button>Submit</button>
         <button>Edit</button>
-        <button>Delete</button>
+        <button type="submit" onClick={deleteTask}>Delete</button>
       </td>
     </tr>
 
