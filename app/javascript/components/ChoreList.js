@@ -23,29 +23,20 @@ function ChoreList(props) {
     event.preventDefault()
     const newTask = {
       chore_name: addTask.chore_name,
-
     }
     
     const house_id = 1
-    const chore_name = newTask.chore_name
-    const user_id = 1
     const newChores = [...chores, newTask]
 
    
-    axios.post('http://localhost:3000/api/v1/chore', {chore_name, house_id, user_id})
+    axios.post('http://localhost:3000/api/v1/chore', {newTask, house_id})
     .then((res) => {
-      // debugger
+      debugger
   })
   
     setChores(newChores)
-    setAddTask("")
   
   }
-
-
- 
-
-
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -70,7 +61,7 @@ function ChoreList(props) {
   
   return (
     <div>
-      <table className="table">
+      <table class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
