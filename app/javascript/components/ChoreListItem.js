@@ -19,20 +19,14 @@ function ChoreListItem(props) {
   const deleteTask = function(id) {
      const data = props.chore.id
      const object = props.chore
-     console.log('chores', data)
-    // const deleteId = props.chore.id;
 
     axios.delete(`http://localhost:3000/api/v1/chore/${data}`, {data: object})
-    .then((result) => console.log('result', result))
-  
-
-    const newChores = [...chores]  
-    const index = newChores.indexOf(data +5)
-    
-    console.log('index', index)
-    newChores.pop()
-    setChores(newChores);
-  
+    .then((result) => {
+      axios.get('http://localhost:3000/api/v1/houses/1')
+      .then((res) => {
+        setChores(res.data.chores)
+      })
+    })
   }
 
 
@@ -75,7 +69,7 @@ function ChoreListItem(props) {
         {/* <button onClick={postChore}>Submit</button> */}
         <button>Submit</button>
         <button>Edit</button>
-        <button type="button" onClick={deleteTask}>Delete</button>
+        <button type="submit" onClick={deleteTask}>Delete</button>
       </td>
     </tr>
 

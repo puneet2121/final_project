@@ -14,8 +14,17 @@ function ChoreList(props) {
     
     axios.get('http://localhost:3000/api/v1/houses/1')
     .then((res) => {
-      setChores(res.data.chores)
+      // setChores(res.data.chores)
       setRoommates(res.data.roommates)
+    })
+  }, [])
+
+  useEffect(() => {
+    
+    axios.get('http://localhost:3000/api/v1/chore')
+    .then((res) => {
+      setChores(res.data)
+      console.log('chores in axios get request', chores)
     })
   }, [])
 
@@ -38,7 +47,6 @@ function ChoreList(props) {
   })
   
     setChores(newChores)
-    setAddTask("")
   
   }
 
