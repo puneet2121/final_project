@@ -5,7 +5,6 @@ import axios from 'axios';
 function ChoreListItem(props) {
   const [taskee, setTaskee] = useState(props.chore.user_id || null);
   const [chores, setChores] = useState([])
-  console.log('props here: ', props)
 
   useEffect(() => {
     
@@ -14,10 +13,21 @@ function ChoreListItem(props) {
       setChores(res.data.chores)
     })
   }, [])
+
+
   
   const deleteTask = function(id) {
-    const idToDelete = undefined;
-    axios.delete(`http://localhost:3000/api/v1/chore/${idToDelete}`)
+     const data = props.chore.id
+     const object = props.chore
+     console.log('data in delete', data)
+
+    // const deleteId = props.chore.id;
+
+    axios.delete(`http://localhost:3000/api/v1/chore/${data}`, {data: object})
+    .then((result) => console.log('result', result))
+
+
+  
   }
 
 
