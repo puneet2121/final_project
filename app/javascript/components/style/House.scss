@@ -1,7 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
-.name
-{
+.name {
     background: rgba(174, 192, 202, 0.3);
     border-radius: 20px;
     margin: 70px;
@@ -9,8 +8,23 @@
     padding-bottom: 88px;
     padding-left: 7.5rem;
 }
-.navbar-brand{
-    &:hover{
-        color:red;
-    }
+
+
+
+.navbar-brand:hover {
+    
+    position: relative;
+    
+    background: rgba(101, 148, 210, 0.3);
+    border-radius: 60% 40% 40% 20%;
+}
+
+.hover-overlay:hover {
+    background: linear-gradient(45deg, rgba(29, 236, 197, 0.5), rgba(91, 14, 214, 0.5) 100%);
+    -o-transition: .5s;
+    -ms-transition: .5s;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    transition: .5s;
+    box-shadow: 10px 10px 5px 5px #5489a8;
 }
