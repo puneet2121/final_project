@@ -1,0 +1,77 @@
+
+.chore-table {
+  border: solid black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  table-layout: auto;
+  width: 90%;
+  background-color: white;
+}
+
+.delete-button {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.add-button {
+  color: #fff;
+  background-color: green;
+  border-color: green;
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.add-chore-box {
+  border: solid;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 70%;
+}
+
+.input-box {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  
+}
+
+.Add-chore-title {
+  display:flex;
+  justify-content: center;
+}
+
+.table-header {
+  border-bottom: solid black;
+}
+
+.app-height {
+  height: 1000px;
+}

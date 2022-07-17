@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useCookies } from "react-cookie"; 
 import axios from 'axios';
+import '../../assets/stylesheets/chores.css'
+
 
 function ChoreListItem(props) {
   const [taskee, setTaskee] = useState(props.chore.user_id || null);
   const [chores, setChores] = useState([])
+
+
+  const [values, setValues] = useState([])
+
+  const val = ['Everyday', 'Every other day', 'Once a week'];
 
   useEffect(() => {
     
@@ -53,23 +60,20 @@ function ChoreListItem(props) {
   </select>
       </td>
       <td>
-      <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a className="dropdown-item" >Action</a>
-    <a className="dropdown-item" >Another action</a>
-    <a className="dropdown-item" >Something else here</a>
-  </div>
+  <select 
+  value={values}
+  onChange={(event) => setValues(event.target.value)}
+  >
+    {
+      val.map((value) => {
+        return <option value={value}>{value}</option>
+      })
+    }
+  </select>
       </td>
       <td>
-        <span className = "label label-success">Success Label</span>
-      </td>
-      <td>
-        {/* <button onClick={postChore}>Submit</button> */}
-        <button>Submit</button>
-        <button>Edit</button>
-        <button type="submit" onClick={deleteTask}>Delete</button>
+       
+        <button type="submit" onClick={deleteTask} className='delete-button'>Delete</button>
       </td>
     </tr>
 
