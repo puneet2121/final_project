@@ -5,51 +5,51 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# houses = House.create([
-#   {
-#     address: '2349 West 99th',
-#     number_of_tenants: 3,
-#     image: 'https://images.rentals.ca/property-pictures/medium/vancouver-bc/337361/apartment-2336904.jpg'
-#   },
-#   {
-#     address: '3478 East 13th',
-#     number_of_tenants: 2,
-#     image: 'https://www.theglobeandmail.com/resizer/n3RZ9XFIvl604wft0JF8GveFTHM=/arc-anglerfish-tgam-prod-tgam/public/GBHFSF76CBF6BDP32GINSJESHQ.JPG'
-#   }
-# ])
+houses = House.create([
+  {
+    address: '2349 West 99th',
+    number_of_tenants: 3,
+    image: 'https://images.rentals.ca/property-pictures/medium/vancouver-bc/337361/apartment-2336904.jpg'
+  },
+  {
+    address: '3478 East 13th',
+    number_of_tenants: 2,
+    image: 'https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat4&accessoriesType=Round&hatColor=Red&hairColor=Blonde&facialHairType=Blank&facialHairColor=Black&clotheType=BlazerSweater&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Disbelief&skinColor=Pale'
+  }
+])
 
-# users = User.create([
-#   {
-#     name: 'Ali Bouran',
-#     image: 'https://media.istockphoto.com/vectors/simple-human-icon-business-design-isolated-on-white-background-vector-id1082096450?k=20&m=1082096450&s=170667a&w=0&h=s7SFmeD2a5b3YfVocArJ2FH9ZUfRbwrotlCXs5izOkQ=',
-#     bio: 'I like trains.',
-#     house: houses.first
-#   },
-#   {
-#     name: 'Puneet Kumar',
-#     image: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
-#     bio: 'Lighthouse Labs',
-#     house: houses.first
-#   },
-#   {
-#     name: 'Henry Jr.',
-#     image: 'https://www.gtiarmoredcars.com/wp-content/uploads/2021/02/62681-flat-icons-face-computer-design-avatar-icon.png',
-#     bio: 'I love my roommates',
-#     house: houses.first
-#   },
-#   {
-#     name: 'Angy',
-#     image: 'https://cdn2.vectorstock.com/i/1000x1000/32/01/user-sign-icon-person-symbol-human-avatar-vector-12693201.jpg',
-#     bio: 'Books',
-#     house: houses[1]
-#   },
-#   {
-#     name: 'Andy',
-#     image: 'https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg',
-#     bio: 'Cats',
-#     house: houses[1]
-#   }
-# ])
+users = User.create([
+  {
+    name: 'Jennie Inez',
+    image: 'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairCurvy&accessoriesType=Prescription02&hatColor=Black&hairColor=Platinum&facialHairType=BeardMedium&facialHairColor=Blonde&clotheType=Hoodie&clotheColor=Blue02&graphicType=Diamond&eyeType=Surprised&eyebrowType=Default&mouthType=Serious&skinColor=Tanned',
+    bio: 'B2B target audience usability credentials transparent tackle it consolidate deliverables client-facing',
+    house: houses.first
+  },
+  {
+    name: 'Daley Tanya',
+    image: 'https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png',
+    bio: 'Proposed high-level ETA conversion client-facing synergy internally segment',
+    house: houses.first
+  },
+  {
+    name: 'Merry Ira',
+    image: 'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairCurly&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&facialHairColor=Blonde&clotheType=ShirtCrewNeck&clotheColor=Gray01&eyeType=Side&eyebrowType=DefaultNatural&mouthType=Grimace&skinColor=Pale',
+    bio: 'Push the envelope value creation strategic partners high-level pivot next steps onboarding',
+    house: houses.first
+  },
+  {
+    name: 'Beryl Constance',
+    image: 'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortCurly&accessoriesType=Round&hairColor=Platinum&facialHairType=MoustacheFancy&facialHairColor=Blonde&clotheType=BlazerSweater&clotheColor=White&eyeType=Surprised&eyebrowType=UpDownNatural&mouthType=ScreamOpen&skinColor=Brown',
+    bio: 'Client-facing hackathon ROI pipeline cohesive mock up agile third party cross platform',
+    house: houses.first
+  },
+  {
+    name: 'Aric Poppy',
+    image: 'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairFrizzle&accessoriesType=Prescription01&hairColor=PastelPink&facialHairType=BeardLight&facialHairColor=Platinum&clotheType=ShirtCrewNeck&clotheColor=PastelBlue&eyeType=EyeRoll&eyebrowType=SadConcernedNatural&mouthType=Disbelief&skinColor=Brown',
+    bio: 'Client-facing whiteboard next steps transparent tackle it responsive behavior heads down third party',
+    house: houses.first
+  }
+])
 
 houses = House.all
 users = User.all

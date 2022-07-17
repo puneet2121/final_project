@@ -12,7 +12,7 @@ import Col from 'react-bootstrap/Col';
 import { useCookies } from "react-cookie";
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
-
+import "./style/House.scss";
 
 
 function House(props) {
@@ -69,14 +69,15 @@ function House(props) {
 
 
   return (
-
-    <div className='bg-light shadow-5 text-dark'>
-      <Container style={{ marginTop: '95px' }}>
-        <Row>
-          <Col><User roommate={state.user} address={state.attributes} /></Col>
-          <Col><Roommate roommate={roommate} /></Col>
-        </Row>
-      </Container>
+    <div>
+      <div className='name'>
+        <Container style={{ marginTop: '95px' }}>
+          <Row>
+            <Col><User roommate={state.user} address={state.attributes} /></Col>
+            <Col><Roommate roommate={roommate} /></Col>
+          </Row>
+        </Container>
+      </div>
       <Container style={{ marginTop: '100px' }}>
         <Row>
           <Col>
@@ -88,7 +89,6 @@ function House(props) {
             <Task viewTask={viewTask} /></Col>
         </Row>
       </Container>
-
       <button onClick={props.logout}>Logout</button>
     </div>
   )
