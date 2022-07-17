@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ChoreListItem from './ChoreListItem';
+import '../../assets/stylesheets/chores.css'
 
 function ChoreList(props) {
   const [chores, setChores] = useState([]);
@@ -78,14 +79,13 @@ function ChoreList(props) {
   
   return (
     <div>
-      <table className="table">
-  <thead>
+      <table className='chore-table'>
+  <thead className="table-header">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Chore</th>
       <th scope="col">Who's doing it</th>
       <th scope="col">Occurence</th>
-      <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -93,12 +93,13 @@ function ChoreList(props) {
       {choreList}
     </tbody>
       </table>
-      <h2>Add a chore</h2>
-      <form onSubmit={submitTask}>
+      <div className='add-chore-box'>
+      <h2 className="Add-chore-title">Add a chore</h2>
+      <form onSubmit={submitTask} className="input-box">
         <input type='text' onChange={handleForm} name="chore_name" required="required" placeholder="Add task"></input>
-        <button type="submit" onSubmit={submitTask}>Add</button>
+        <button type="submit" onSubmit={submitTask} className="add-button">Add</button>
       </form>
-
+      </div>
     </div>  
   )
 }
