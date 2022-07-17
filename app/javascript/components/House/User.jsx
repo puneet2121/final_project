@@ -6,7 +6,7 @@ export default function User(props) {
   console.log('props',props)
   const [cookies] = useCookies()
   return (
-    <Card border="primary" style={{ width: '24rem', height: '27rem', border: '5px solid black', borderRadius: '15px!important'}} >
+    <Card border="primary" style={{ width: '24rem', height: '27rem', border: '1px solid black', borderRadius: '15px!important'}} >
       <Card.Img variant="top" src={ props?.roommate?.image} style={{height:'14rem',width:'21rem', marginLeft:'5%'}}/>
     <Card.Header>{props?.roommate?.name}</Card.Header>
     <Card.Body>
