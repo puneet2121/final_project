@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie";
 import axios from 'axios';
 import TextLinkExample from "./Nav";
 import Task from "./House/Tasks";
+import '../../assets/stylesheets/chores.css'
 
 const App = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
@@ -57,7 +58,7 @@ const App = () => {
   }
   console.log("this is the user data", userData)
   return (
-    <div style={{ backgroundImage: `url('https://img.wallpapersafari.com/desktop/1600/900/31/57/UDWB4H.jpg')` }}>
+    <div style={{ backgroundImage: `url('https://i.imgur.com/WgM609y.png')` }} className='app-height'>
       <TextLinkExample userData={userData}
         isLogin={isLogin} />
       <Switch>

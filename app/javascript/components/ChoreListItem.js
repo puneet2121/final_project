@@ -9,7 +9,9 @@ function ChoreListItem(props) {
   const [chores, setChores] = useState([])
 
 
-  const [values, setValues] = useState(['Everyday', 'Every other day', 'Once a week'])
+  const [values, setValues] = useState([])
+
+  const val = ['Everyday', 'Every other day', 'Once a week'];
 
   useEffect(() => {
     
@@ -60,9 +62,10 @@ function ChoreListItem(props) {
       <td>
   <select 
   value={values}
+  onChange={(event) => setValues(event.target.value)}
   >
     {
-      values.map((value) => {
+      val.map((value) => {
         return <option value={value}>{value}</option>
       })
     }

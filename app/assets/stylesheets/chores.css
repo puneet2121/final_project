@@ -6,6 +6,7 @@
   margin-top: 30px;
   table-layout: auto;
   width: 90%;
+  background-color: white;
 }
 
 .delete-button {
@@ -69,4 +70,8 @@
 
 .table-header {
   border-bottom: solid black;
+}
+
+.app-height {
+  height: 1000px;
 }
