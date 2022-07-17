@@ -2,9 +2,15 @@
 
 .name
 {
+    background: rgba(174, 192, 202, 0.3);
     border-radius: 20px;
     margin: 70px;
     padding-top: 5px;
     padding-bottom: 88px;
-    padding-left: 6.5rem;
+    padding-left: 7.5rem;
+}
+.navbar-brand{
+    &:hover{
+        color:red;
+    }
 }

@@ -8,6 +8,7 @@ import Home from './Home'
 import House from './House'
 import App from "./App";
 import Button from 'react-bootstrap/Button';
+import "./style/House.scss";
 
 
 function TextLinkExample(props) {
@@ -23,11 +24,11 @@ function TextLinkExample(props) {
 
   return (
     <div>
-      <Navbar bg="primary" variant="dark">
+      <Navbar style={{ backgroundImage: `url('https://i.imgur.com/WgM609y.png')` }}>
         <Container>
-          <NavLink className="navbar-brand" to="/">Home</NavLink>
+          <NavLink className="navbar-brand" to="/" style={{fontSize:'25px'}}>Home</NavLink>
           <Nav className="navbar-brand">
-            <Button className="btn bg-transparent border-0" onClick={routeChange} style={{ outline:'none' }}>
+            <Button className="btn bg-transparent border-0" onClick={routeChange} style={{ outline:'none', color:'black',fontSize:'25px',focus:'none'}}>
               My House
             </Button> </Nav>
         </Container>
