@@ -31,11 +31,6 @@ const App = () => {
           }
         })
     }
-    document.body.style.backgroundColor = "yellow";
-
-    return () => {
-      document.body.style.backgroundColor = "white";
-    };
   }, [])
 
   function login(e) {
