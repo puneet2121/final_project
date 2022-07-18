@@ -10,10 +10,12 @@ export default function User(props) {
     <Card border="primary" className='hover-overlay' style={{width: '30rem', height: '44rem', border: '2px solid black', borderRadius: '21px' , marginLeft:'-18px'}} >
       <Card.Img variant="top" src={props?.roommate?.image} style={{ height: '15rem', width: '23rem', marginLeft: '12%', marginTop:'-21px'}} />
       <hr />
-      <Card.Title style={{alignText:'center'}}>My Profile <br />{props?.roommate?.name}</Card.Title>
+      <Card.Title className="text-center">{props?.roommate?.name}</Card.Title>
+      <hr />
       <Card.Body>
-        <Card.Title>{props.address.address}</Card.Title>
+        <Card.Title>{props.address.address}&nbsp;street</Card.Title>
         <Card.Img variant="top" src={ props.address.image} style={{height:'14rem',width:'21rem', marginLeft:'10%'}}/>
+        <hr />
         <Card.Text>
           {props?.roommate?.bio}
         </Card.Text>

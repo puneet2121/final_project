@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { NavLink, useHistory} from 'react-router-dom'
+import { NavLink, useHistory } from 'react-router-dom'
 import Home from './Home'
 import House from './House'
 import App from "./App";
@@ -20,19 +20,15 @@ function TextLinkExample(props) {
     }
     history.push('/');
   }
-  
+
 
   return (
     <div>
-      <Navbar style={{ backgroundImage: `url('https://i.imgur.com/WgM609y.png')` }}>
-        <Container>
-          <NavLink className="navbar-brand" to="/" style={{fontSize:'25px'}}>Home</NavLink>
-          <Nav className="navbar-brand">
-            <Button className="btn bg-transparent border-0" onClick={routeChange} style={{ outline:'none', color:'black',fontSize:'25px',focus:'none'}}>
-              My House
-            </Button> </Nav>
-        </Container>
-      </Navbar>
+      <Nav className="navbar-brand-1">
+        <NavLink className="navbar-brand-2" to="/" style={{ fontSize: '35px' }}>ℝ𝕚𝕡𝕡𝕝𝕖</NavLink>
+        <Button className="bg-transparent" onClick={routeChange} style={{ outline: 'none', color: 'black', fontSize: '35px',marginLeft:'60rem',border:'none' }}>
+          му нσυѕє
+        </Button> </Nav>
     </div>
   );
 }

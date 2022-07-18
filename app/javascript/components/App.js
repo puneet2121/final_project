@@ -8,6 +8,7 @@ import axios from 'axios';
 import TextLinkExample from "./Nav";
 import Task from "./House/Tasks";
 import '../../assets/stylesheets/chores.css'
+import Nav3 from "./Nav3";
 
 const App = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
@@ -59,8 +60,9 @@ const App = () => {
   console.log("this is the user data", userData)
   return (
     <div style={{ backgroundImage: `url('https://i.imgur.com/WgM609y.png')` }} className='app-height'>
-      <TextLinkExample userData={userData}
-        isLogin={isLogin} />
+      <Nav3 userData={userData}
+        isLogin={isLogin}
+        logout={logout} />
       <Switch>
 
         <Route exact path={`/house/${userData.house_id}`}>

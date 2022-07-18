@@ -4,7 +4,7 @@ function Task(props) {
   return (
     <>
       <div className="mb-2">
-        <Button variant="primary" size="lg"onClick={props.viewTask}>
+        <Button style={{ marginTop: '95px',width:'200px', height:'80px' ,marginLeft:'100px',backgroundColor:'dodgerblue'}} onClick={props.viewTask}>
           View Task
         </Button>
       </div>

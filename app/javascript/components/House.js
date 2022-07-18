@@ -77,10 +77,10 @@ function House(props) {
           </Row>
         </Container>
       </div>
-      <Container style={{ marginTop: '100px' }}>
-        <Row>
+      <Container style={{ marginTop: '-100px'  }}>
+        <Row style = {{marginLeft:'35px'}}>
           <Col>
-            <Button variant="primary" size="lg" onClick={routeChange}>
+            <Button style={{ marginTop: '95px',width:'200px', height:'80px',marginLeft:'70px',backgroundColor:'dodgerblue' }} onClick={routeChange}>
               Generate Task
             </Button>
           </Col>
@@ -88,7 +88,6 @@ function House(props) {
             <Task viewTask={viewTask} /></Col>
         </Row>
       </Container>
-      <button onClick={props.logout}>Logout</button>
     </div>
   )
 }
