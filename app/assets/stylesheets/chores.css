@@ -75,3 +75,36 @@
 .app-height {
   height: 1500px;
 }
+
+.something {
+  width: 7%;
+  font-size: xx-large;
+  position: relative;
+    
+  background: rgba(16, 105, 213, 0.3);
+  border-radius: 60% 40% 40% 20%;
+}
+
+.house-image{
+  display: flex;
+  align-items: flex-end;
+  padding: 100px;
+  height: 600px;
+  position: relative;
+  background: hsl(0, 11%, 98%);
+  border-radius: 60% 40% 40% 20%;
+  margin-right: 20px;
+  
+}
+
+.main-thing {
+  display:flex;
+  align-items: center
+}
+
+.tag-line {
+  position: relative;
+    
+  background: rgba(101, 148, 210, 0.3);
+  border-radius: 60% 40% 40% 20%;
+}
