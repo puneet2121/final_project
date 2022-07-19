@@ -51,7 +51,7 @@ function ChoreList(props) {
     const newChores = [...chores, newTask]
 
 
-    axios.post('http://localhost:3000/api/v1/chore', { chore_name, house_id, user_id: userId })
+    axios.post('http://localhost:3000/api/v1/chore', { chore_name, house_id, user_id: 1 })
       .then((res) => {
         // debugger
 
