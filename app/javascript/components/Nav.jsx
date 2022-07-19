@@ -25,8 +25,8 @@ function TextLinkExample(props) {
   return (
     <div>
       <Nav className="navbar-brand-1">
-        <NavLink className="navbar-brand-2" to="/" style={{ fontSize: '35px' }}>ℝ𝕚𝕡𝕡𝕝𝕖</NavLink>
-        <Button className="bg-transparent" onClick={routeChange} style={{ outline: 'none', color: 'black', fontSize: '35px',marginLeft:'60rem',border:'none' }}>
+        <NavLink className="navbar-brand-2" to="/" style={{ fontSize: '35px' }}>🆁🅸🅿🅿🅻🅴</NavLink>
+        <Button className="bg-transparent" onClick={routeChange} style={{ outline: 'none', color: 'black', fontSize: '31px',marginLeft:'56rem',border:'none' }}>
           му нσυѕє
         </Button> </Nav>
     </div>

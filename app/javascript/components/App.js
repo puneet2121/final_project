@@ -74,7 +74,7 @@ const App = () => {
           />
         </Route>
         <Route exact path={`/house/${userData.house_id}/chores`}>
-          <ChoreList />
+          <ChoreList userData={userData} />
         </Route>
         <Route exact path="/" render={() => (
           isLogin ? (

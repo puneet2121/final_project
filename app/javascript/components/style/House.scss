@@ -14,7 +14,7 @@
     color: #0000;
     -webkit-background-clip: text;
     background-clip: text;
-    
+    font-size: 50px;
     font-weight: bold;
     display: inline-block;
 }
@@ -45,4 +45,11 @@
 }
 .bg-transparent{
     border:none;
+}
+.button {
+    
+    color: #0000;
+    font-size: 35px;
+    font-weight: bold;
+    display: inline-block;   
 }
