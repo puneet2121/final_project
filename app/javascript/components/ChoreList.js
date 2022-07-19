@@ -25,9 +25,10 @@ function ChoreList(props) {
     axios.get('http://localhost:3000/api/v1/chore')
     .then((res) => {
       setChores(res.data)
-      console.log('chores in axios get request', chores)
     })
   }, [])
+
+  console.log('chores:', chores)
 
   const submitTask = event => {
     event.preventDefault()

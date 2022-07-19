@@ -6,7 +6,7 @@ import '../../assets/stylesheets/chores.css'
 
 function ChoreListItem(props) {
   const [taskee, setTaskee] = useState(props.chore.user_id || null);
-  const [chores, setChores] = useState([])
+  // const [chores, setChores] = useState([])
 
 
   const [values, setValues] = useState([])
@@ -17,7 +17,7 @@ function ChoreListItem(props) {
     
     axios.get('http://localhost:3000/api/v1/houses/1')
     .then((res) => {
-      setChores(res.data.chores)
+      // setChores(res.data.chores)
     })
   }, [])
 
@@ -27,16 +27,26 @@ function ChoreListItem(props) {
      const data = props.chore.id
      const object = props.chore
 
-    axios.delete(`http://localhost:3000/api/v1/chore/${data}`, {data: object})
-    .then((result) => {
-      axios.get('http://localhost:3000/api/v1/houses/1')
-      .then((res) => {
-        setChores(res.data.chores)
-      })
+    // axios.delete(`http://localhost:3000/api/v1/chore/${data}`, {data: object})
+    // .then((result) => {
+    //   console.log('chores:', chores)
+    //   setChores(result.data.chores)
+    //   axios.get('http://localhost:3000/api/v1/houses/1')
+    //   .then((res) => {
+    //     setChores(res.data.chores)
+    //   })
+    // })
+
+    axios.delete(`http://localhost:3000/api/v1/chore/${data}`)
+    axios.get('http://localhost:3000/api/v1/chore')
+    .then((res) => {
+      console.log('res data in get', res.data)
     })
+    
+    console.log('chores after get & delete request:', props.chore)
   }
 
-
+  console.log('state outside function props:',props.chore)
 
   return (
 

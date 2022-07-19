@@ -22,7 +22,7 @@ module Api
       end
 
       def destroy
-        chore = Chore.destroy(params[:id])
+        @chore = Chore.destroy(params[:id])
       end
 
 
