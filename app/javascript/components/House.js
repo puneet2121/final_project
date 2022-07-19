@@ -15,8 +15,6 @@ import "./style/House.scss";
 
 
 function House(props) {
-  // const [cookies, setCookie,removeCookie] = useCookies(["user"]);
-  console.log(props.cookies, 'this is a cookie')
   const [state, setState] = useState({
     attributes: {},
     roommates: [],

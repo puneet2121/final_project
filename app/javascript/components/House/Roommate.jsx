@@ -2,7 +2,6 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import '../style/House.scss'
 export default function Roommate(props) {
-  console.log('props', props)
   return (
     <>
 

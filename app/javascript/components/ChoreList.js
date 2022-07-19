@@ -17,7 +17,6 @@ function ChoreList(props) {
 
     axios.get('http://localhost:3000/api/v1/houses/1')
       .then((res) => {
-        // setChores(res.data.chores)
         setRoommates(res.data.roommates)
       })
   }, [])
@@ -30,18 +29,16 @@ function ChoreList(props) {
 
       })
   }, [])
-  // useEffect(() => {
-  //   console.log('useerid', userId);
-  // }, [userId])
+
   const removeChore = (choreId) => {
     const currentChores = chores.filter( chore => chore.id === choreId? false: true)
     setChores(currentChores);
   }
 
-  console.log('chores:', chores)
 
   const submitTask = event => {
     event.preventDefault()
+
     const newTask = {
       chore_name: addTask.chore_name,
 
@@ -53,19 +50,15 @@ function ChoreList(props) {
     const newChores = [...chores, newTask]
 
 
-    axios.post('http://localhost:3000/api/v1/chore', { chore_name, house_id, user_id: userId })
+    axios.post('http://localhost:3000/api/v1/chore', { chore_name, house_id, user_id: 1 })
       .then((res) => {
-        // debugger
+
 
       })
 
     setChores(newChores)
 
   }
-
-
-
-
 
   const handleForm = (event) => {
     event.preventDefault();
@@ -94,7 +87,6 @@ function ChoreList(props) {
       <table className='chore-table'>
         <thead className="table-header">
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Chore</th>
             <th scope="col">Who's doing it</th>
             <th scope="col">Occurence</th>

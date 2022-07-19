@@ -25,7 +25,6 @@ const App = () => {
           if (result.data && result.data.user) {
             setCookie("user", result.data.user);
             setUserdata(result.data.user)
-            console.log(result.data, "con")
             setIslogin(true)
           } else {
             //handle bad login
@@ -43,7 +42,6 @@ const App = () => {
         if (result.data && result.data.user) {
           setCookie("user", result.data.user);
           setUserdata(result.data.user)
-          console.log(result.data, "con")
           setIslogin(true)
 
         } else {
@@ -57,7 +55,6 @@ const App = () => {
     history.push('/')
     setIslogin(false)
   }
-  console.log("this is the user data", userData)
   return (
     <div style={{ backgroundImage: `url('https://i.imgur.com/WgM609y.png')` }} className='app-height'>
       <Nav3 userData={userData}

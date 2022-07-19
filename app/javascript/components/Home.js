@@ -8,9 +8,7 @@ import { useState, useEffect } from 'react';
 import '../../assets/stylesheets/chores.css'
 import img from '../src/images/Untitled-3 2.png'
 function Home(props) {
-  // const [cookies, setCookie] = useCookies(["user"]);
   const something = useParams()
-  console.log(something, 'ffff')
   
   const [state, setState] = useState({
     attributes: {},

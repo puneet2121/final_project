@@ -5,7 +5,6 @@ import { useCookies } from "react-cookie";
 import '../style/House.scss'
 import img from "../../src/images/Untitled-3 2.png"
 export default function User(props) {
-  console.log('props', props)
   const [cookies] = useCookies()
   return (
     <Card border="primary" className='hover-overlay' style={{width: '30rem', height: '44rem', border: '2px solid black', borderRadius: '21px' , marginLeft:'-18px'}} >

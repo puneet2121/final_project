@@ -13,26 +13,6 @@ function ChoreListItem(props) {
 
   const val = ['Everyday', 'Every other day', 'Once a week'];
 
-<<<<<<< HEAD
-  useEffect(() => {
-    
-    axios.get('http://localhost:3000/api/v1/houses/1')
-    .then((res) => {
-      // setChores(res.data.chores)
-    })
-  }, [])
-=======
-  // useEffect(() => {
-
-  //   axios.get('http://localhost:3000/api/v1/houses/1')
-  //     .then((res) => {
-  //       setChores(res.data.chores)
-  //     })
-  //     props.setUserId(taskee);
-  //     console.log(taskee)
-  // }, [taskee])
->>>>>>> 48f137ed26ed46b83192da0a3f3891493d1e45e6
-
 
   
 
@@ -50,14 +30,10 @@ function ChoreListItem(props) {
    const newuserId = event.target.value
     axios.put(`http://localhost:3000/api/v1/chore/${props.chore.id}`, { user_id:newuserId })
       .then((res) => {
-        console.log('line 46 res val',res)
-        // debugger
         setTaskee(newuserId)
-        console.log(newuserId)
       })
   }
 
-  console.log('state outside function props:',props.chore)
 
 
  
@@ -65,19 +41,16 @@ function ChoreListItem(props) {
 
     <tr>
       <td>
-        {props.chore.id}
-      </td>
-      <td>
         <p> {props.chore.chore_name}</p>
       </td>
       <td>
         <select
+          multiple={false}
           value={taskee}
           onChange={ updateTask}
         >
           {
             props.roommates.map((roommate) => {
-              // props.setUserId(roommate.id);
               return <option value={roommate.id}>{roommate.name}</option>
             })
           }
@@ -85,6 +58,7 @@ function ChoreListItem(props) {
       </td>
       <td>
         <select
+          multiple={false}
           value={values}
           onChange={(event) => setValues(event.target.value)}
         >
