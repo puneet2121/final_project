@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image'
 import { useCookies } from "react-cookie";
 import '../style/House.scss'
+import img from "../../src/images/Untitled-3 2.png"
 export default function User(props) {
   console.log('props', props)
   const [cookies] = useCookies()
@@ -14,7 +15,7 @@ export default function User(props) {
       <hr />
       <Card.Body>
         <Card.Title>{props.address.address}&nbsp;street</Card.Title>
-        <Card.Img variant="top" src={ props.address.image} style={{height:'14rem',width:'21rem', marginLeft:'10%'}}/>
+        <Card.Img variant="top" src={ img} style={{height:'14rem',width:'21rem', marginLeft:'10%'}}/>
         <hr />
         <Card.Text>
           {props?.roommate?.bio}

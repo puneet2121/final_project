@@ -24,7 +24,13 @@ module Api
       def destroy
         chore = Chore.destroy(params[:id])
       end
+      def update
+        chore = Chore.find(params[:id])
+        chore.user_id = params[:user_id]
+        chore.save
+        render json: {user_id:chore.user_id}
 
+      end
 
       private
 

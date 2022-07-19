@@ -16,8 +16,8 @@ function Nav1(props) {
   return (
     <div>
       <Nav className="navbar-brand-1">
-      <NavLink className="navbar-brand-2" to="/" style={{fontSize:'35px'}}>ℝ𝕚𝕡𝕡𝕝𝕖</NavLink>
-      <Button className="bg-transparent" onClick={props.logout} style={{ outline:'none', color:'black',fontSize:'35px',marginLeft:'60rem',border:'none'}}>Logout</Button>
+      <NavLink className="navbar-brand-2" to="/" style={{fontSize:'35px'}}>🆁🅸🅿🅿🅻🅴</NavLink>
+      <Button className="bg-transparent" onClick={props.logout} style={{ outline:'none', color:'black',fontSize:'31px',marginLeft:'58rem',border:'none'}}>Logout</Button>
      </Nav>
     </div>
   );
