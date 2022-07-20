@@ -53,3 +53,15 @@
     font-weight: bold;
     display: inline-block;   
 }
+.zoom {
+    padding: 0px;
+   
+    transition: transform .5s; /* Animation */
+    background:  rgba(28, 101, 197, 0.3);
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    background: rgba(101, 148, 210, 0.3);
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }

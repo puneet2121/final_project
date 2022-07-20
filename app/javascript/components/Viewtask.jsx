@@ -3,17 +3,13 @@ import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react';
 import { Link, useHistory, Redirect, useParams } from 'react-router-dom';
 import User from './House/User'
-import Roommate from './House/Roommate'
-import Generatetask from './House/Generatetask';
-import Task from './House/Tasks';
-import Container from 'react-bootstrap/Container';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useCookies } from "react-cookie";
 import Button from 'react-bootstrap/Button';
 import "./style/House.scss";
 import Card from 'react-bootstrap/Card';
-import './style/House.scss'
 
 function Viewtask(props) {
   const [state, setState] = useState({
@@ -59,13 +55,15 @@ function Viewtask(props) {
   console.log(roommate)
   return (
     <>
-      <div style={{marginTop: '10rem'}}>
+    <h1 className="text-center" style={{color:'#2e30ac'}}> List of tasks for {state.user.name}</h1>
+      <div style={{marginTop: '7rem'}}>
+      
         {state.chores.map((roommate) => {
           return (
-
-            <Card style={{ width: '50%', marginLeft: '20rem' }}>
+            
+            <Card className="zoom" style={{ width: '55%', marginLeft: '18rem', background:"rgba(15 143 215 / 75%)",borderRadius:'18px', marginBottom:'4px' ,color:'#131be5'}}>
               <Card.Body>
-                <Card.Title>⚫{roommate?.chore_name} <div className="text-end">{roommate?.occurence}</div> </Card.Title>
+                <Card.Title>◎&nbsp;&nbsp;{roommate?.chore_name} <div className="text-end" style={{color:'#77ff00'}}>{roommate?.occurence}</div> </Card.Title>
               </Card.Body>
             </Card>)
 
