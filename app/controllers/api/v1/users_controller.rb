@@ -8,7 +8,11 @@ module Api
       end
       def show
         user = User.find(params[:id])
-        render json: {user:user, house: user.house.users}
+        user_id = User.find(params[:id])
+        chores = Chore.where("user_id = #{user_id.id}")
+        
+        render json: {user:user, house: user.house.users,chores:chores}
+        # user_id = User.find(params[:id])
         
       end
       def login
@@ -18,6 +22,10 @@ module Api
         puts user
         render json: {user:user}
       end
+      # def view 
+        
+      #   render json: {users:user_id,chores:chores}
+      # end
     end
   end
 end
