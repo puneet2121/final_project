@@ -34,7 +34,6 @@ const App = () => {
         })
     }
   }, [])
-console.log(userData)
   function login(e) {
     e.preventDefault()
     axios.post('http://localhost:3000/api/v1/login', { name: username })
@@ -72,7 +71,7 @@ console.log(userData)
           />
         </Route>
         <Route exact path={`/house/${userData.house_id}/chores`}>
-          <ChoreList userData={userData} />
+          <ChoreList userData={userData} cookies={cookies}/>
         </Route>
         <Route exact path="/" render={() => (
           isLogin ? (

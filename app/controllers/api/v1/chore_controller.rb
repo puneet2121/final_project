@@ -26,7 +26,6 @@ module Api
 
       def update
         chore = Chore.find(params[:id])
-        # chore.user_id = params[:user_id]
         # chore.occurence = params[:occurence]
 
         if params[:user_id]

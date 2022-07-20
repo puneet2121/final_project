@@ -10,8 +10,7 @@ function ChoreListItem(props) {
 
   const occurences = ['Everyday', 'Every other day', 'Once a week'];
 
-  console.log("occurences", occurences);
-  console.log("occurence(state)", occurence)
+
   
 
   const deleteTask = function (id) {
@@ -26,7 +25,6 @@ function ChoreListItem(props) {
   const updateTask = event => {
    event.preventDefault()
    const newuserId = event.target.value
-  //  updateChore(newuserId, occurence)
    axios.put(`/api/v1/chore/${props.chore.id}`, {user_id: newuserId})
    .then((res) => {
     setTaskee(newuserId)
