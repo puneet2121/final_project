@@ -59,11 +59,9 @@ function House(props) {
     history.push(path);
   }
   const viewTask = () => {
-    let path = `/house/chores/viewtasks`;
+    let path=`/house/chores/viewtasks/${props.userData.id}`
     history.push(path);
   }
-
-
 
   return (
     <div>

@@ -30,7 +30,12 @@ module Api
         render json: {user_id:chore.user_id}
 
       end
-
+      def view 
+        chore = Chore.find(params[:id])
+        render json: {
+          chore: chore,
+        }
+      end
       private
 
       def chore_params

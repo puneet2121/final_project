@@ -9,6 +9,7 @@ import TextLinkExample from "./Nav";
 import Task from "./House/Tasks";
 import '../../assets/stylesheets/chores.css'
 import Nav3 from "./Nav3";
+import Viewtask from "./House/Viewtask";
 
 const App = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
@@ -33,7 +34,7 @@ const App = () => {
         })
     }
   }, [])
-
+console.log(userData)
   function login(e) {
     e.preventDefault()
     axios.post('http://localhost:3000/api/v1/login', { name: username })
@@ -82,8 +83,8 @@ const App = () => {
               setUsername={setUsername}
               removeCookie={removeCookie} />)
         )} />
-        <Route exact path={`/house/chores/viewtasks`}>
-          <Task />
+        <Route exact path={`/house/chores/viewtasks/${userData.id}`}>
+          <Viewtask userData={userData}/>
 
         </Route>
       </Switch>
