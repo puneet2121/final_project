@@ -1,4 +1,4 @@
-import React, { useState, useEffect,Fragment } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import Home from '../components/Home';
 import House from '../components/House';
@@ -9,7 +9,7 @@ import TextLinkExample from "./Nav";
 import Task from "./House/Tasks";
 import '../../assets/stylesheets/chores.css'
 import Nav3 from "./Nav3";
-import Viewtask from "./House/Viewtask";
+import Viewtask from "./Viewtask";
 
 const App = () => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
@@ -34,7 +34,7 @@ const App = () => {
         })
     }
   }, [])
-console.log(userData)
+  console.log(userData)
   function login(e) {
     e.preventDefault()
     axios.post('http://localhost:3000/api/v1/login', { name: username })
@@ -84,7 +84,12 @@ console.log(userData)
               removeCookie={removeCookie} />)
         )} />
         <Route exact path={`/house/chores/viewtasks/${userData.id}`}>
-          <Viewtask userData={userData}/>
+          <Viewtask userData={userData}
+            removeCookie={removeCookie} setCookie={setCookie}
+            cookies={cookies}
+            logout={logout}
+            isLogin={isLogin}
+          />
 
         </Route>
       </Switch>

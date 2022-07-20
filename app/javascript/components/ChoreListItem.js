@@ -6,7 +6,7 @@ import '../../assets/stylesheets/chores.css'
 
 function ChoreListItem(props) {
   const [taskee, setTaskee] = useState(props.chore.user_id || null);
-  const [occurence, setOccurence] = useState(props.chore.occurence || null)
+  const [occurence, setOccurence] = useState(props.chore.occurence || null )
 
   const occurences = ['Everyday', 'Every other day', 'Once a week'];
 
