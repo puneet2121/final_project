@@ -13,6 +13,7 @@ function ChoreList(props) {
   });
 
 
+
   useEffect(() => {
 
     axios.get('http://localhost:3000/api/v1/houses/1')
@@ -26,7 +27,6 @@ function ChoreList(props) {
     axios.get('http://localhost:3000/api/v1/chore')
       .then((res) => {
         setChores(res.data)
-
       })
   }, [])
 
@@ -52,11 +52,11 @@ function ChoreList(props) {
 
     axios.post('http://localhost:3000/api/v1/chore', { chore_name, house_id, user_id: 1})
       .then((res) => {
-
+        setChores(newChores)
+        
 
       })
 
-    setChores(newChores)
 
   }
 

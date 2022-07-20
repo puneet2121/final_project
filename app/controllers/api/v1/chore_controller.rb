@@ -23,10 +23,22 @@ module Api
       def destroy
         @chore = Chore.destroy(params[:id])
       end
+
       def update
         chore = Chore.find(params[:id])
-        chore.user_id = params[:user_id]
+        # chore.user_id = params[:user_id]
+        # chore.occurence = params[:occurence]
+
+        if params[:user_id]
+          chore.user_id = params[:user_id]
+        end
+
+        if  params[:occurence]
+          chore.occurence = params[:occurence]
+        end
+
         chore.save
+        puts chore.errors.full_messages
         render json: {user_id:chore.user_id}
 
       end
@@ -39,7 +51,7 @@ module Api
       private
 
       def chore_params
-        params.require(:chore).permit(:chore_name, :house_id, :user_id)
+        params.require(:chore).permit(:chore_name, :house_id, :user_id, :occurence)
       end
 
     end
