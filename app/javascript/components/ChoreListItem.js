@@ -6,14 +6,12 @@ import '../../assets/stylesheets/chores.css'
 
 function ChoreListItem(props) {
   const [taskee, setTaskee] = useState(props.chore.user_id || null);
-  // const [chores, setChores] = useState([])
+  const [occurence, setOccurence] = useState(props.chore.occurence || null)
 
+  const occurences = ['Everyday', 'Every other day', 'Once a week'];
 
-  const [values, setValues] = useState([])
-
-  const val = ['Everyday', 'Every other day', 'Once a week'];
-
-
+  console.log("occurences", occurences);
+  console.log("occurence(state)", occurence)
   
 
   const deleteTask = function (id) {
@@ -26,13 +24,36 @@ function ChoreListItem(props) {
       })
   }
   const updateTask = event => {
-    event.preventDefault()
+   event.preventDefault()
    const newuserId = event.target.value
-    axios.put(`http://localhost:3000/api/v1/chore/${props.chore.id}`, { user_id:newuserId })
-      .then((res) => {
-        setTaskee(newuserId)
-      })
+  //  updateChore(newuserId, occurence)
+   axios.put(`/api/v1/chore/${props.chore.id}`, {user_id: newuserId})
+   .then((res) => {
+    setTaskee(newuserId)
+   })
   }
+
+  const updateOccurence = event => {
+    event.preventDefault()
+    const newOccurence = event.target.value
+    axios.put(`/api/v1/chore/${props.chore.id}`, {occurence: newOccurence})
+   .then((res) => {
+    setOccurence(newOccurence)
+   })
+  }
+
+  // const updateChore = (userId, occurence) => {
+  //   console.log('before')
+  //   axios.put(`/api/v1/chore/${props.chore.id}`, { 
+  //     user_id: userId,
+  //     occurence: occurence
+  //    })
+  //     .then((res) => {
+  //       console.log('after')
+  //       setTaskee(userId)
+  //       setOccurence(occurence);
+  //     })
+  // }
 
 
 
@@ -47,7 +68,7 @@ function ChoreListItem(props) {
         <select
           multiple={false}
           value={taskee}
-          onChange={ updateTask}
+          onChange={updateTask}
         >
           {
             props.roommates.map((roommate) => {
@@ -59,12 +80,12 @@ function ChoreListItem(props) {
       <td>
         <select
           multiple={false}
-          value={values}
-          onChange={(event) => setValues(event.target.value)}
+          value={occurence}
+          onChange={updateOccurence}
         >
           {
-            val.map((value) => {
-              return <option value={value}>{value}</option>
+            occurences.map((occurence) => {
+              return <option value={occurence}>{occurence}</option>
             })
           }
         </select>
