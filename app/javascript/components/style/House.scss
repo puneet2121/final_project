@@ -37,31 +37,70 @@
     box-shadow: 10px 10px 5px 5px #5489a8;
 }
 
-.bg-transparent:hover{
+.bg-transparent:hover {
     position: relative;
 
     background: rgba(101, 148, 210, 0.3);
     border-radius: 60% 40% 40% 20%;
 }
-.bg-transparent{
-    border:none;
+
+.bg-transparent {
+    border: none;
 }
+
 .button {
-    
+
     color: #0000;
     font-size: 35px;
     font-weight: bold;
-    display: inline-block;   
+    display: inline-block;
 }
+
 .zoom {
     padding: 0px;
-   
-    transition: transform .5s; /* Animation */
-    background:  rgba(28, 101, 197, 0.3);
+
+    transition: transform .5s;
+    /* Animation */
+    background: rgba(28, 197, 104, 0.3);
     margin: 0 auto;
-  }
-  
-  .zoom:hover {
+}
+
+.zoom:hover {
     background: rgba(101, 148, 210, 0.3);
-    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-  }
+    transform: scale(1.1);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.popup {
+    position: absolute;
+    top: 47%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    width: 490px;
+    height: 200px;
+    font-weight:bold;
+    color:#f00;
+}
+
+@keyframes popup {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+.popup2 {
+    position: absolute;
+    top: 60%;
+    left: 72%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    height: 350px;
+    opacity: 0;
+    animation: popup .5s 5s ease forwards;
+}
+.mb-3 {
+    animation: popup .5s 5s ease forwards;
+}

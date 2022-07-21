@@ -56,7 +56,7 @@ function Viewtask(props) {
   return (
     <>
     <h1 className="text-center" style={{color:'#2e30ac'}}> List of tasks for {state.user.name}</h1>
-      <div style={{marginTop: '7rem'}}>
+     <div style={{marginTop: '7rem'}}>
       
         {state.chores.map((roommate) => {
           return (
