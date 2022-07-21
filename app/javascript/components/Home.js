@@ -51,7 +51,7 @@ function Home(props) {
 
         <div className='main-thing'>
           <img src={img} className='popup2' />
-          <h1 style={{marginLeft:'320px',fontWeight:'bold'}}>A roommate management system.</h1>
+          <h1 style={{marginLeft:'320px',fontWeight:'bold'}}>A task management system for roommates.</h1>
         </div>
         <Form.Group className="mb-3" controlId="formBasicEmail" style={{marginTop:"257px", width:'40%', marginLeft:'70px'}}>
           <Form.Label className="mb-3" style={{fontSize:"30px"}} >Login</Form.Label>
