@@ -18,6 +18,9 @@
     font-weight: bold;
     display: inline-block;
 }
+.roommate {
+    background: linear-gradient(0deg, rgb(0, 255, 229) 25%, #00abff 60%);
+}
 
 
 .navbar-brand-2:hover {
@@ -72,14 +75,11 @@
 }
 
 .popup {
-    position: absolute;
-    top: 47%;
-    left: 29%;
-    transform: translate(-50%, -50%);
-    width: 490px;
-    height: 200px;
+    
+    
+    margin-left: -8px;
     font-weight:bold;
-    color:#f00;
+    color:#15e760;
 }
 
 @keyframes popup {
@@ -99,8 +99,8 @@
     width: 620px;
     height: 350px;
     opacity: 0;
-    animation: popup .5s 5s ease forwards;
+    animation: popup .2s 2s ease forwards;
 }
 .mb-3 {
-    animation: popup .5s 5s ease forwards;
+    animation: popup .2s 2s ease forwards;
 }

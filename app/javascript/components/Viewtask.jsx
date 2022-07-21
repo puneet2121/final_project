@@ -56,6 +56,7 @@ function Viewtask(props) {
   return (
     <>
     <h1 className="text-center" style={{color:'#2e30ac'}}> List of tasks for {state.user.name}</h1>
+    
      <div style={{marginTop: '7rem'}}>
       
         {state.chores.map((roommate) => {
@@ -63,7 +64,7 @@ function Viewtask(props) {
             
             <Card className="zoom" style={{ width: '55%', marginLeft: '18rem', background:"rgba(15 143 215 / 75%)",borderRadius:'18px', marginBottom:'4px' ,color:'#131be5'}}>
               <Card.Body>
-                <Card.Title>◎&nbsp;&nbsp;{roommate?.chore_name} <div className="text-end" style={{color:'#77ff00'}}>{roommate?.occurence}</div> </Card.Title>
+                <Card.Title>◎&nbsp;&nbsp;{roommate?.chore_name} <div className="text-end" style={{color:'#77ff00'}}>{roommate?.occurence ? roommate.occurence: 'Everyday'}</div> </Card.Title>
               </Card.Body>
             </Card>)
 

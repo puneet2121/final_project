@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import '../../assets/stylesheets/chores.css';
 import img from '../src/images/Untitled-3 2.png';
 import "./style/House.scss";
+import Card from 'react-bootstrap/Card';
 function Home(props) {
   const something = useParams()
 
@@ -46,21 +47,24 @@ function Home(props) {
 
   return (
     <>
-      <h1 className='popup'>Welcome to Ripple</h1>
-      <Form style={{marginLeft:'90px'}}>
 
-        <div className='main-thing'>
-          <img src={img} className='popup2' />
-          <h1 style={{marginLeft:'320px',fontWeight:'bold'}}>A roommate management system.</h1>
-        </div>
-        <Form.Group className="mb-3" controlId="formBasicEmail" style={{marginTop:"257px", width:'40%', marginLeft:'70px'}}>
-          <Form.Label className="mb-3" style={{fontSize:"30px"}} >Login</Form.Label>
-          <Form.Control type="name" value={props.username} onChange={(event) => props.setUsername(event.target.value)} />
-        </Form.Group>
-        <Button style={{marginLeft:'70px'}} className="mb-3"  variant="primary" type="button" onClick={props.login}>
-          Submit
-        </Button>
-      </Form>
+      <img src={img} className='popup2' />
+      <h1 className="roommate" style={{ marginLeft: '338px', fontWeight: 'bold', width: '45%' }}>A roommate management system.</h1>
+      <Card style={{ width: '30rem',height:'24rem' ,marginTop: "172px", marginLeft: '200px',background: 'rgba(101 148 210 / 81%)'  }}>
+        <Form style={{ marginLeft: '90px' }}>
+          <h1 className='popup'>Welcome to Ripple</h1>
+          <div className='main-thing'>
+
+          </div>
+          <Form.Group className="mb-3" controlId="formBasicEmail" style={{ marginTop: "27px", width: '70%', marginLeft: '-75px' }}>
+            <Form.Label className="mb-3" style={{ fontSize: "30px" }} >Login</Form.Label>
+            <Form.Control type="name" value={props.username} onChange={(event) => props.setUsername(event.target.value)} />
+          </Form.Group>
+          <Button style={{ marginLeft: '-77px' }} className="mb-3" variant="primary" type="button" onClick={props.login}>
+            Submit
+          </Button>
+        </Form>
+      </Card>
     </>
   )
 }
