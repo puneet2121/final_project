@@ -4,6 +4,10 @@ Welcome to Ripple! it is a simple task management between roommates. It’s an a
 
 ## Contribuitors:
 
-This is a team-built application that Ali Bouran, Puneet Kumar created for the final project from the May 2nd, 2022 to July 22, 2022, Lighthouse Labs Web Development Bootcamp - West cohort.
+This is a team-built application that Ali Bouran, Puneet Kumar created for the final project from the May 2nd, 2022 to July 22, 2022, Lighthouse Labs Web Development Bootcamp - West cohort.The app was built using React, Ruby on rails, PostgreSQL, Active Record, Bootstrap, HTML, CSS/SASS
 - Ali Bouran (https://github.com/ahbouran)
 - Puneet Kumar (https://github.com/puneet2121)
+
+## Screenshots
+
+!["Home Page"](https://github.com/ahbouran/final_project/blob/4f36e3b849a06d99cebd687e455d5ae7a57503cb/docs/Home%20page.png)
