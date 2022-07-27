@@ -1,24 +1,9 @@
-# README
+# Task Management App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Ripple! it is a simple task management between roommates. It’s an app that allows users to be part of a house where the chores for the week can be created, deleted and updated between roommates. It is a dynamic to-do list shared between multiple people. 
 
-Things you may want to cover:
+# Contribuitors:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a team-built application that Ali Bouran, Puneet Kumar created for the final project from the May 2nd, 2022 to July 22, 2022, Lighthouse Labs Web Development Bootcamp - West cohort.
+• Ali Bouran (https://github.com/ahbouran)
+• Puneet Kumar (https://github.com/puneet2121)
