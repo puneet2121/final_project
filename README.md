@@ -11,3 +11,6 @@ This is a team-built application that Ali Bouran, Puneet Kumar created for the f
 ## Screenshots
 
 !["Home Page"](https://github.com/ahbouran/final_project/blob/4f36e3b849a06d99cebd687e455d5ae7a57503cb/docs/Home%20page.png)
+!["House Page"](https://github.com/ahbouran/final_project/blob/cc4a01ae61416863d8fa4ca1266804423fc8d53e/docs/Housepage.png)
+!["Generate task Page"](https://github.com/ahbouran/final_project/blob/cc4a01ae61416863d8fa4ca1266804423fc8d53e/docs/generate%20task.png)
+!["View task Page"](https://github.com/ahbouran/final_project/blob/cc4a01ae61416863d8fa4ca1266804423fc8d53e/docs/Viewtaskpage.png)
