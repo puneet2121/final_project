@@ -1,6 +1,6 @@
 ## Task Management App
 
-Welcome to Ripple! it is a simple task management between roommates. It’s an app that allows users to be part of a house where the chores for the week can be created, deleted and updated between roommates. It is a dynamic to-do list shared between multiple people. 
+Welcome to Ripple! It is a simple task management between roommates. It’s an app that allows users to be part of a house where the chores for the week can be created, deleted and updated between roommates. It is a dynamic to-do list shared between multiple people. 
 
 ## Contribuitors:
 
